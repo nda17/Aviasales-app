@@ -1,0 +1,21 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.right-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.info {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 167%;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	text-align: center;
+	color: #4a4a4a;
+}
