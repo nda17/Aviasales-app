@@ -1,0 +1,39 @@
+.wrapper {
+	display: flex;
+}
+
+.button-cheap,
+.button-fast,
+.button-optimal {
+	width: 168px;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 167%;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: #ffffff;
+	color: #4a4a4a;
+	padding: 15px;
+	border: 1px solid #dfe5ec;
+}
+
+.button-cheap {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.button-fast {
+	border-right: none;
+	border-left: none;
+}
+
+.button-optimal {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.active {
+	background-color: #2196f3;
+	color: #ffffff;
+}
