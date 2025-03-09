@@ -1,0 +1,83 @@
+.form-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 20px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.title {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 100%;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: #4a4a4a;
+	text-transform: uppercase;
+}
+
+.checkbox-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	position: relative;
+}
+
+.checkbox {
+	width: 20px;
+	height: 20px;
+	opacity: 0;
+	margin: 0;
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	z-index: 1; /* Добавляем z-index чтобы input был поверх псевдоэлементов */
+}
+
+.checkbox-label {
+	position: relative;
+	font-size: 13px;
+	line-height: 20px;
+	letter-spacing: 0;
+	color: #4a4a4a;
+	user-select: none;
+	padding-left: 29px;
+	display: inline-block;
+	cursor: default; /* Убираем курсор pointer с текста */
+}
+
+.checkbox-label::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+	border: 2px solid #9abbce;
+	border-radius: 2px;
+	background-color: #ffffff;
+	transition: all 0.2s ease;
+}
+
+.checkbox-label::after {
+	content: '';
+	position: absolute;
+	left: 8px;
+	top: 3px;
+	width: 5px;
+	height: 11px;
+	transform: rotate(45deg);
+	border: none;
+}
+
+.checkbox:checked + .checkbox-label::before {
+	border-color: #2196f3;
+}
+
+.checkbox:checked + .checkbox-label::after {
+	border: solid #2196f3;
+	border-width: 0 2px 2px 0;
+}
