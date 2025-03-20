@@ -29,7 +29,6 @@ export const TicketList: FC = () => {
 	const sortedResult =
 		sortedTickets(tickets, transfersFilter, additionalFilter) || [];
 
-	// console.log(sortedResult, 6);
 	const ticketsQuantityVisible = sortedResult.slice(0, quantityTickets);
 
 	return (
