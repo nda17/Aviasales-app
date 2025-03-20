@@ -7,10 +7,12 @@ import { TransfersFilter } from '@/components/ui/transfers-filter/TransfersFilte
 import { useGetSearchIdQuery, useGetTicketsQuery } from '@/store/api';
 import { setProgressBar } from '@/store/slices/progressBarSlice';
 import { FC, useEffect, useState } from 'react';
+import { Offline, Online } from 'react-detect-offline';
 import { useDispatch, useSelector } from 'react-redux';
 import LoadingBar from 'react-top-loading-bar';
 
 export const Main: FC = () => {
+	const description = 'Please, try again later or check your connection.';
 	const [shouldPoll, setShouldPoll] = useState(false); // Флаг для управления опросом
 	const transfersFilter = useSelector(
 		(state: { transfersFilter: { activeFilters: string } }) =>
@@ -69,27 +71,32 @@ export const Main: FC = () => {
 				progress={progress}
 				onLoaderFinished={() => changeProgress(0)}
 			/>
-			<section className={styles.wrapper}>
-				<TransfersFilter />
-				<div className={styles['right-wrapper']}>
-					<AdditionalFilter />
-					{!transfersFilter.length && (
-						<p className={styles.info}>
-							По вашему запросу билетов не найдено
-						</p>
-					)}
-					{(transfersFilter.length && isFetching && (
-						<p className={styles.info}>Поиск билетов, ожидайте ...</p>
-					)) ||
-						null}
-					{(transfersFilter.length && isError && (
-						<p className={styles.info}>Ошибка при загрузке билетов</p>
-					)) ||
-						null}
-					{(transfersFilter.length && <TicketList />) || null}
-					{(transfersFilter.length && <ShowMoreButton />) || null}
-				</div>
-			</section>
+			<Online>
+				<section className={styles.wrapper}>
+					<TransfersFilter />
+					<div className={styles['right-wrapper']}>
+						<AdditionalFilter />
+						{!transfersFilter.length && (
+							<p className={styles.info}>
+								По вашему запросу билетов не найдено
+							</p>
+						)}
+						{(transfersFilter.length && isFetching && (
+							<p className={styles.info}>Поиск билетов, ожидайте ...</p>
+						)) ||
+							null}
+						{(transfersFilter.length && isError && (
+							<p className={styles.info}>Ошибка при загрузке билетов</p>
+						)) ||
+							null}
+						{(transfersFilter.length && <TicketList />) || null}
+						{(transfersFilter.length && <ShowMoreButton />) || null}
+					</div>
+				</section>
+			</Online>
+			<Offline>
+				<p className={styles['offline-banner']}>{description}</p>
+			</Offline>
 		</>
 	);
 };

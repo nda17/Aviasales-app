@@ -15,7 +15,8 @@
 	gap: 20px;
 }
 
-.info {
+.info,
+.offline-banner {
 	font-weight: 500;
 	font-size: 12px;
 	line-height: 167%;
@@ -23,4 +24,10 @@
 	text-transform: uppercase;
 	text-align: center;
 	color: #4a4a4a;
+}
+
+.offline-banner {
+	position: absolute;
+	top: 50%;
+	left: 0;
 }
