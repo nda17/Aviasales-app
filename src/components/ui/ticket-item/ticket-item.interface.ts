@@ -1,4 +1,4 @@
-import { IRouteInfo } from '../route-info/route-info.interface';
+import { IRouteInfo } from '@/components/ui/route-info/route-info.interface';
 
 export interface ITicketItem {
 	price: number;
