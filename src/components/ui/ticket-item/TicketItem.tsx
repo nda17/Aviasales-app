@@ -1,8 +1,8 @@
 import { RouteInfo } from '@/components/ui/route-info/RouteInfo';
 import { ITicketItem } from '@/components/ui/ticket-item/ticket-item.interface';
 import styles from '@/components/ui/ticket-item/TicketItem.module.scss';
-import { formatPrice } from '@/utils/format-price.util';
-import { generatePathLogoCarrier } from '@/utils/generate-path-logo-carrier.util';
+import { formatPrice } from '@/utils/format-price';
+import { generatePathLogoCarrier } from '@/utils/generate-path-logo-carrier';
 import { FC } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 

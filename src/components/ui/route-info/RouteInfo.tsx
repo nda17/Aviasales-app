@@ -1,9 +1,9 @@
 import { IRouteInfo } from '@/components/ui/route-info/route-info.interface';
 import styles from '@/components/ui/route-info/RouteInfo.module.scss';
-import { formatStopsAirports } from '@/utils/format-stops-airports.util';
-import { formatStopsQuantity } from '@/utils/format-stops-quantity.util';
-import { formatTimeRange } from '@/utils/format-time-range.util';
-import { formatTime } from '@/utils/format-time.util';
+import { formatStopsAirports } from '@/utils/format-stops-airports';
+import { formatStopsQuantity } from '@/utils/format-stops-quantity';
+import { formatTime } from '@/utils/format-time';
+import { formatTimeRange } from '@/utils/format-time-range';
 import { FC } from 'react';
 
 export const RouteInfo: FC<IRouteInfo> = ({

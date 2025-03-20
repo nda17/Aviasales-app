@@ -1,7 +1,7 @@
 import { ITicketItem } from '@/components/ui/ticket-item/ticket-item.interface';
 import { TicketItem } from '@/components/ui/ticket-item/TicketItem';
 import styles from '@/components/ui/ticket-list/TicketList.module.scss';
-import { sortedTickets } from '@/utils/sorted-tickets.util';
+import { sortedTickets } from '@/utils/sorted-tickets';
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
@@ -29,6 +29,7 @@ export const TicketList: FC = () => {
 	const sortedResult =
 		sortedTickets(tickets, transfersFilter, additionalFilter) || [];
 
+	// console.log(sortedResult, 6);
 	const ticketsQuantityVisible = sortedResult.slice(0, quantityTickets);
 
 	return (
