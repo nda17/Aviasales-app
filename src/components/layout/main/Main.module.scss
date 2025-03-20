@@ -1,7 +1,12 @@
 .wrapper {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	gap: 20px;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+	}
 }
 
 .right-wrapper {
