@@ -1,7 +1,7 @@
-import logo from '@/assets/logo.png';
 import styles from '@/components/layout/header/Header.module.scss';
 import { PUBLIC_PAGES } from '@/config/pages/public.config';
 import { FC } from 'react';
+import logo from '/Logo.png';
 
 export const Header: FC = () => {
 	return (
