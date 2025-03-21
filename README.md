@@ -13,7 +13,6 @@
 - Date-fns
 - React-detect-offline
 - UUID
--
 
 ## Deployed:
 
